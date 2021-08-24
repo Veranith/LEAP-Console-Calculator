@@ -8,32 +8,14 @@ namespace LEAP_Console_Calculator
         {
             try
             {
-                var inputs = new utilities();
+                var calculator = new utilities();
                 
-                decimal input1 = inputs.getNumber("Enter number 1 (numbers only): ");
-                decimal input2 = inputs.getNumber("Enter number 2 (numbers only): ");
+                decimal input1 = calculator.getNumber("Enter number 1 (numbers only): ");
+                decimal input2 = calculator.getNumber("Enter number 2 (numbers only): ");
 
-                string operator1 = inputs.getOperator("Enter operator ( X / + - )  :");
+                string operator1 = calculator.getOperator("Enter operator ( X / + - )  :");
 
-            
-                decimal result = 0;
-                switch (operator1.ToLower())
-                {
-                    case "x":
-                    case "*":
-                        result = input1 * input2;
-                        break;
-                    case "/":
-                    case "\\":
-                        result = input1 / input2;
-                        break;
-                    case "+":
-                        result = input1 + input2;
-                        break;
-                    case "-":
-                        result = input1 - input2;
-                        break;
-                }
+                decimal result = calculator.doCalculation(input1, input2, operator1);
 
                 Console.WriteLine($" {input1} {operator1} {input2} = {result}");
 

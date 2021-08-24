@@ -33,6 +33,29 @@ namespace LEAP_Console_Calculator
             return userInput;
         }
 
+        public decimal doCalculation(decimal input1, decimal input2, string operator1)
+        {
+            decimal result = 0;
+            switch (operator1.ToLower())
+            {
+                case "x":
+                case "*":
+                    result = input1 * input2;
+                    break;
+                case "/":
+                case "\\":
+                    result = input1 / input2;
+                    break;
+                case "+":
+                    result = input1 + input2;
+                    break;
+                case "-":
+                    result = input1 - input2;
+                    break;
+            }
+
+            return result;
+        }
         private string getInput(string message)
         {
             Console.Write(message);
