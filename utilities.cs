@@ -4,9 +4,9 @@ namespace LEAP_Console_Calculator
 {
     class utilities
     {
+        // Get validated decimal varable from user
         public decimal getNumber(string message)
         {
-
             string userInput;
             decimal result;
             do
@@ -16,9 +16,9 @@ namespace LEAP_Console_Calculator
             while (!Decimal.TryParse(userInput, out result));
             
             return result;
-
         }
 
+        // Gets and validates math operator from user
         public string getOperator(string message)
         {
             string userInput;
@@ -33,6 +33,7 @@ namespace LEAP_Console_Calculator
             return userInput;
         }
 
+        // Performs the basic math given the inputs an
         public decimal doCalculation(decimal input1, decimal input2, string operator1)
         {
             decimal result = 0;
@@ -53,6 +54,8 @@ namespace LEAP_Console_Calculator
                     result = input1 - input2;
                     break;
             }
+
+            // TODO handle if result is too large
 
             return result;
         }
