@@ -12,10 +12,9 @@ namespace LEAP_Console_Calculator
                 
                 decimal input1 = inputs.getNumber("Enter number 1 (numbers only): ");
                 decimal input2 = inputs.getNumber("Enter number 2 (numbers only): ");
-                
-                Console.Write("Enter operator ( X / + - )  :");
-                string operator1 = Console.ReadLine();
-                // TODO input validation
+
+                string operator1 = inputs.getOperator("Enter operator ( X / + - )  :");
+
             
                 decimal result = 0;
                 switch (operator1.ToLower())

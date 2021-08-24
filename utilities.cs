@@ -19,6 +19,20 @@ namespace LEAP_Console_Calculator
 
         }
 
+        public string getOperator(string message)
+        {
+            string userInput;
+
+            // TODO was unable to quickly find out to compare a string to a array of chars or something similar. Will come back to this if I have time. 
+            //char[] allowedOperators = { 'x', '*', '/', '\\', '+', '-' };
+            do
+            {
+                userInput = getInput(message);
+            } while (!(userInput.ToLower() == "x" || userInput == "*" || userInput == "/" || userInput == "\\" || userInput == "+" || userInput == "-" ));
+
+            return userInput;
+        }
+
         private string getInput(string message)
         {
             Console.Write(message);
