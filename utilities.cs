@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LEAP_Console_Calculator
 {
@@ -30,13 +31,12 @@ namespace LEAP_Console_Calculator
         public string getOperator(string message)
         {
             string userInput;
+            var allowedOperators = new List<string> { "x", "*", "/", "\\", "+", "-"};            
 
-            // TODO was unable to quickly find out to compare a string to a array of chars or something similar. Will come back to this if I have time. 
-            // char[] allowedOperators = { 'x', '*', '/', '\\', '+', '-' }; Collections or list
             do
             {
                 userInput = getInput(message);
-            } while (!(userInput.ToLower() == "x" || userInput == "*" || userInput == "/" || userInput == "\\" || userInput == "+" || userInput == "-" ));
+            } while (!allowedOperators.Contains(userInput.ToLower()));
 
             return userInput;
         }
