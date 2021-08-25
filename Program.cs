@@ -24,7 +24,15 @@ namespace LEAP_Console_Calculator
             {
                 Console.WriteLine($"Unable to divide by 0.");
             }
-            // TODO add more exception handling
+            catch (OverflowException)
+            {
+                Console.WriteLine("Result is too large for this calculator.");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Unknown error has occurred.");
+                Console.WriteLine(e.ToString());
+            }
 
             // TODO add Y/N do while loop to start over
 
