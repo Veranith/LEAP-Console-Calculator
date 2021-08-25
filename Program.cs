@@ -6,37 +6,39 @@ namespace LEAP_Console_Calculator
     {
         static void Main(string[] args)
         {
-            try
+            string continueLoop = "n";
+            var calculator = new utilities();
+
+            do
             {
-                var calculator = new utilities();
-                
-                decimal input1 = calculator.getNumber("Enter number 1 (numbers only): ");
-                decimal input2 = calculator.getNumber("Enter number 2 (numbers only): ");
+                try
+                {
+                    decimal input1 = calculator.getNumber("Enter number 1 (numbers only): ");
+                    decimal input2 = calculator.getNumber("Enter number 2 (numbers only): ");
 
-                string operator1 = calculator.getOperator("Enter operator ( X / + - )  :");
+                    string operator1 = calculator.getOperator("Enter operator ( X / + - )  :");
 
-                decimal result = calculator.doCalculation(input1, input2, operator1);
-                
-                Console.WriteLine($" {input1} {operator1} {input2} = {result}");
+                    decimal result = calculator.doCalculation(input1, input2, operator1);
 
-            }
-            catch (DivideByZeroException)
-            {
-                Console.WriteLine($"Unable to divide by 0.");
-            }
-            catch (OverflowException)
-            {
-                Console.WriteLine("Result is too large for this calculator.");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Unknown error has occurred.");
-                Console.WriteLine(e.ToString());
-            }
+                    Console.WriteLine($" {input1} {operator1} {input2} = {result}");
+                }
+                catch (DivideByZeroException)
+                {
+                    Console.WriteLine($"Unable to divide by 0.");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Result is too large for this calculator.");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Unknown error has occurred.");
+                    Console.WriteLine(e.ToString());
+                }
 
-            // TODO add Y/N do while loop to start over
+                continueLoop = calculator.getInput("\n\nWould you like to perform another calculation? (y/N) ");
 
-
+            } while (continueLoop.ToLower() == "y" || continueLoop.ToLower() == "yes");
         }
     }
 }

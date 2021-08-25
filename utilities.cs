@@ -77,7 +77,7 @@ namespace LEAP_Console_Calculator
         /// </summary>
         /// <param name="message"> This is the message that is displayed to the user. </param>
         /// <returns> Returns a string with the users input. </returns>
-        private string getInput(string message)
+        public string getInput(string message)
         {
             Console.Write(message);
             return Console.ReadLine();
