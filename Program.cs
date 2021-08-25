@@ -7,7 +7,7 @@ namespace LEAP_Console_Calculator
         static void Main(string[] args)
         {
             string continueLoop = "n";
-            var calculator = new utilities();
+            var calculator = new Utilities();
 
             do
             {
@@ -20,7 +20,7 @@ namespace LEAP_Console_Calculator
 
                     decimal result = calculator.doCalculation(input1, input2, operator1);
 
-                    Console.WriteLine($" {input1} {operator1} {input2} = {result}");
+                    Console.WriteLine($"\n\n\t{input1} {operator1} {input2} = {result}");
                 }
                 catch (DivideByZeroException)
                 {

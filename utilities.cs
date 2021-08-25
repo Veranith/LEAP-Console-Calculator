@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace LEAP_Console_Calculator
 {
-    class utilities
+    class Utilities
     {
         /// <summary>
         /// This funciton prompts validated decimal varable from user with custom message
@@ -17,9 +17,9 @@ namespace LEAP_Console_Calculator
             do
             {
                 userInput = getInput(message);
-            } 
+            }
             while (!Decimal.TryParse(userInput, out result));
-            
+
             return result;
         }
 
@@ -31,7 +31,7 @@ namespace LEAP_Console_Calculator
         public string getOperator(string message)
         {
             string userInput;
-            var allowedOperators = new List<string> { "x", "*", "/", "\\", "+", "-"};            
+            var allowedOperators = new List<string> { "x", "*", "/", "\\", "+", "-" };
 
             do
             {
